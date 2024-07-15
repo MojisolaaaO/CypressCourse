@@ -1,0 +1,11 @@
+{
+    "image": ".login_logo",
+    "usernameField": "[data-test='username']",
+    "passwordField": "[data-test='password']",
+    "loginButton": "[data-test='login-button']",
+    "username1": "standard_user",
+    "username2": "locked_out_user",
+    "password": "secret_sauce",
+    "product1": ".inventory_item_name",
+    "productimage": ".inventory_details_img"
+}

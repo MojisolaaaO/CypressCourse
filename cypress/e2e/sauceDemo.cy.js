@@ -1,73 +1,55 @@
+//import { selectors } from "../fixtures/elements"
+var el
 describe('Login', () => {
     before(() => {
         cy.visit('/')
-
-
-    })
-    it('Verify that user can input their username', () => {
-        cy.get('.login_logo').should("be.visible").wait(2000)
-        cy.get('[data-test="username"]').type("standard_user").wait(2000)
-        cy.get('[data-test="username"]').should("have.value", "standard_user")
+        cy.fixture("locators").then((sel) => {
+            el = sel
+        })
 
     })
 
-    it('Verify that user can input their password', () => {
-        cy.get('[data-test="password"]').type("secret_sauce").wait(2000)
-        cy.get('[data-test="login-button"]').click()
-            // cy.screenshot('Test')
+
+
+    // POM using import export
+    // it('Verify that user can input their username', () => {
+    //     cy.get(selectors.image).should("be.visible").wait(2000)
+    //     cy.get(selectors.usernameField).type("stanard_user").clear()
+    //     cy.get(selectors.usernameField).type(selectors.username2).wait(2000)
+    //     cy.get(selectors.usernameField).should("have.value", "standard_user")
+
+    // })
+
+    // it('Verify that user can input their password', () => {
+    //     cy.get(el.passwordField).type(el.password)
+    //     cy.get(el.loginButton).click()
+    //     cy.get(selectors.passwordField).type("secret_sauce").wait(2000)
+    //     cy.get(selectors.loginButton).click()
+    //     cy.screenshot('Test')
+    // })
+
+
+    it('Verify that user can login as a locked out user', () => {
+        cy.get(el.usernameField).type(el.username2)
+        cy.get(el.passwordField).type(el.password)
+        cy.get(el.loginButton).click()
 
     })
 
-    it('Verify that user cannot login with invalid credentials', () => {
+    it('Verify that user can login as a standard user', () => {
+        cy.get(el.usernameField).clear().type(el.username1)
+        cy.get(el.passwordField).clear().type(el.password)
+        cy.get(el.loginButton).click()
+
+    })
+
+    it('Verify that user can view product details', () => {
         cy.visit('/')
-        cy.get('[data-test="username"]').type("standard_use")
-        cy.get('[data-test="password"]').type("secret_sauce").wait(2000)
-        cy.get('[data-test="login-button"]').click()
-        cy.get('[data-test="error"]').should("be.visible")
-
+        cy.get(el.usernameField).type(el.username1)
+        cy.get(el.passwordField).type(el.password)
+        cy.get(el.loginButton).click()
+        cy.get(el.product1).contains("Sauce Labs Backpack").click()
+        cy.get(el.productimage).should("be.visible")
     })
-
-    it('Verify that user cannot login with just username', () => {
-        cy.visit('/')
-        cy.get('[data-test="username"]').type("standard_use")
-        cy.get('[data-test="login-button"]').click()
-        cy.get('.error-message-container').contains("Password is required")
-
-    })
-
-    it('Verify that user cannot login with just password', () => {
-        cy.visit('/')
-        cy.get('[data-test="password"]').type("secret_sauce")
-        cy.get('[data-test="login-button"]').click()
-        cy.get('.error-message-container').contains("Username is required")
-
-    })
-
-    it.only('Verify that user can view product details', () => {
-        cy.get('[data-test="username"]').type("standard_user")
-        cy.get('[data-test="password"]').type("secret_sauce")
-        cy.get('[data-test="login-button"]').click()
-        cy.get('[data-test="item-4-title-link"] > [data-test="inventory-item-name"]').click()
-    })
-
-    it.only('Verify that user can add an item to cart', () => {
-        cy.get('[data-test="add-to-cart"]').click()
-
-    })
-
-    it.only('Verify that user can remove an item to cart', () => {
-        cy.get('[data-test="shopping-cart-link"]').click()
-        cy.get('[data-test="remove-sauce-labs-backpack"]').click()
-
-    })
-
-
-    it.only('Verify that user can logout', () => {
-        cy.get('#react-burger-menu-btn').click()
-        cy.get('[data-test="logout-sidebar-link"]').click()
-
-    })
-
-
 
 })
