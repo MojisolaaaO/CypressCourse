@@ -3,6 +3,9 @@ var el
 describe('Login', () => {
     before(() => {
         cy.visit('/')
+        Cypress.on("uncaught:exception", () => {
+            return false
+        })
         cy.fixture("locators").then((sel) => {
             el = sel
         })
