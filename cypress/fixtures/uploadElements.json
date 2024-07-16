@@ -1,0 +1,5 @@
+{
+    "chooseFileButtton": "#file-upload",
+    "uploadButton": "#file-submit"
+
+}

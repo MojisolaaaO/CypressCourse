@@ -18,5 +18,11 @@
   "homepage": "https://github.com/MojisolaaaO/CypressCourse#readme",
   "devDependencies": {
     "cypress": "^13.13.0"
+  },
+  "dependencies": {
+    "@testing-library/cypress": "^10.0.2",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-fill-command": "^1.0.2",
+    "cypress-xpath": "^2.0.1"
   }
 }

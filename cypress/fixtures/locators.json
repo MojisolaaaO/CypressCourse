@@ -6,6 +6,11 @@
     "username1": "standard_user",
     "username2": "locked_out_user",
     "password": "secret_sauce",
-    "product1": ".inventory_item_name",
-    "productimage": ".inventory_details_img"
+    "sideMenu": "#react-burger-menu-btn",
+    "product1": ".inventory_item_name ",
+    "productImage": ".inventory_details_img",
+    "addToCart": "[data-test='add-to-cart']",
+    "cartIcon": "[data-test='shopping-cart-link']",
+    "removeFromCart": "[data-test='remove-sauce-labs-backpack']"
+
 }
