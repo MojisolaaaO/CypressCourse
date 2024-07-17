@@ -19,7 +19,6 @@ describe("Upload Document", () => {
 
     })
 
-
     //using xpaths
     it('Verify that user can upload a document', () => {
         cy.xpath("/html/body / div[2] / div / div[1] / form / input[1]").attachFile("Locked out user.png")

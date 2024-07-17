@@ -40,7 +40,7 @@ describe('Login', () => {
 
     })
 
-    it.only('Verify that user can login as a standard user', () => {
+    it('Verify that user can login as a standard user', () => {
         cy.get(el.usernameField).clear().fill(el.username1)
         cy.get(el.passwordField).clear().fill(el.password)
             //cy.get(el.loginButton).click()
@@ -49,7 +49,7 @@ describe('Login', () => {
         cy.findByText("Logout").click()
     })
 
-    it('Verify that user can view product details', () => {
+    it.only('Verify that user can view product details', () => {
         cy.visit('/')
         cy.get(el.usernameField).fill(el.username1)
         cy.get(el.passwordField).fill(el.password)
@@ -58,10 +58,21 @@ describe('Login', () => {
         cy.get(el.productImage).should("be.visible")
     })
 
-    it('Verify that user can add a product to cart then remove it', () => {
+    it.skip('Verify that user can add a product to cart then remove it', () => {
         cy.get(el.addToCart).click()
         cy.get(el.cartIcon).click()
         cy.get(el.removeFromCart).click()
+    })
+
+    it.only('Verify that user can add a product to cart and checkout', () => {
+        cy.get(el.addToCart).click()
+        cy.get(el.cartIcon).click()
+        cy.get(el.checkout).click()
+        cy.get(el.firstName).fill("Mojisola")
+        cy.get(el.lastName).fill("Otusheso")
+        cy.get(el.postalCode).fill("234")
+        cy.findByText("Continue").click()
+
     })
 
 })

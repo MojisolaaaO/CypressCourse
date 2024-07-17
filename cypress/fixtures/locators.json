@@ -11,6 +11,11 @@
     "productImage": ".inventory_details_img",
     "addToCart": "[data-test='add-to-cart']",
     "cartIcon": "[data-test='shopping-cart-link']",
-    "removeFromCart": "[data-test='remove-sauce-labs-backpack']"
+    "removeFromCart": "[data-test='remove-sauce-labs-backpack']",
+    "checkout": "[data-test='checkout']",
+    "firstName": "[data-test='firstName']",
+    "lastName": "[data-test='lastName']",
+    "postalCode": "[data-test='postalCode']"
+
 
 }
