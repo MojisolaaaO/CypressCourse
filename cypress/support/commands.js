@@ -28,3 +28,4 @@ import "cypress-fill-command" //faster way of typing
 import '@testing-library/cypress/add-commands' //find elements by text
 import "cypress-file-upload" //uploading files 
 require("cypress-xpath")
+import "./action"
