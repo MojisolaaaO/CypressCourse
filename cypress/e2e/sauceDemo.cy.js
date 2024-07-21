@@ -49,7 +49,7 @@ describe('Login', () => {
         cy.findByText("Logout").click()
     })
 
-    it.only('Verify that user can view product details', () => {
+    it('Verify that user can view product details', () => {
         cy.visit('/')
         cy.get(el.usernameField).fill(el.username1)
         cy.get(el.passwordField).fill(el.password)
@@ -64,7 +64,7 @@ describe('Login', () => {
         cy.get(el.removeFromCart).click()
     })
 
-    it.only('Verify that user can add a product to cart and checkout', () => {
+    it('Verify that user can add a product to cart and checkout', () => {
         cy.get(el.addToCart).click()
         cy.get(el.cartIcon).click()
         cy.get(el.checkout).click()
@@ -73,6 +73,15 @@ describe('Login', () => {
         cy.get(el.postalCode).fill("234")
         cy.findByText("Continue").click()
 
+    })
+
+    it.only('Verify that user can view product details', () => {
+        cy.visit('/')
+        cy.get(el.usernameField).fill(el.username1)
+        cy.get(el.passwordField).fill(el.password)
+        cy.get(el.loginButton).click()
+        cy.get(el.product1).contains("Sauce Labs Backpack").click().wait(3000)
+        cy.get(el.productImage).scrollIntoView()
     })
 
 })

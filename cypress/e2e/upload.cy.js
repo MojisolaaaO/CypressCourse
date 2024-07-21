@@ -1,6 +1,6 @@
 var el
 describe("Upload Document", () => {
-    before(() => {
+    beforeEach(() => {
         cy.visit('https://the-internet.herokuapp.com/upload')
         Cypress.on("uncaught:exception", () => {
             return false

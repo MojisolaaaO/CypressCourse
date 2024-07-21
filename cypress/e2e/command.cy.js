@@ -18,11 +18,11 @@ describe("custom login commands", () => {
 
     })
 
-    it.skip("user can login using reusable functions", () => {
-        cy.tyAssert("command", el.usernameField, el.username)
-        cy.tyAssert("command", el.passwordField, el.password)
-        cy.pressDown("command", el.loginButton)
-    })
+    // it.skip("user can login using reusable functions", () => {
+    //     cy.tyAssert("command", el.usernameField, el.username)
+    //     cy.tyAssert("command", el.passwordField, el.password)
+    //     cy.pressDown("command", el.loginButton)
+    // })
 
 
 })

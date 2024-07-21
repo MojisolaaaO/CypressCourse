@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-07-21T14:46:30.364Z",
+    "end": "2024-07-21T14:46:38.720Z",
+    "duration": 8356,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d43bcf84-e003-46c1-83ac-27183f4bb15f",
+      "title": "",
+      "fullFile": "cypress/e2e/sauceDemo.cy.js",
+      "file": "cypress/e2e/sauceDemo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "231de2fd-ac6d-4f85-b917-b5340b78f9fe",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify that user can view product details",
+              "fullTitle": "Login Verify that user can view product details",
+              "timedOut": null,
+              "duration": 8031,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get(el.usernameField).fill(el.username1);\ncy.get(el.passwordField).fill(el.password);\ncy.get(el.loginButton).click();\ncy.get(el.product1).contains(\"Sauce Labs Backpack\").click().wait(3000);\ncy.get(el.productImage).scrollIntoView();",
+              "err": {},
+              "uuid": "14774ebf-993f-42b6-b026-dcba0e2d991a",
+              "parentUUID": "231de2fd-ac6d-4f85-b917-b5340b78f9fe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "14774ebf-993f-42b6-b026-dcba0e2d991a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8031,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "reportDirectory": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
