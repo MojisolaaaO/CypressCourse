@@ -43,3 +43,14 @@ To run tests in headless mode (without a browser UI):
 ```bash
 npx cypress run
 ```
+
+## Topics Covered
+- Cypress Architecture and Test Sctructure
+- Cypress Basic Commands
+- Locating and Interacting with Web Elements
+- Cypress Commands (Assertions, Waits, Screenshots, and Hooks (before, beforeEach))
+- Page Object Model (POM) using import-export and cy.fixture 
+- Cypress Plugins
+- Handling Errors, Iframes, and Multiple Windows
+- Cypress Custom Commands
+- Cypress Headless Testing and Report Generation
