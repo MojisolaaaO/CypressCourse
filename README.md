@@ -1,4 +1,4 @@
-# CypressCourse
+# Cypress Course
 This repository contains all the code I develop while taking a Cypress course by Testify Academy, serving as both a portfolio of my work and a resource for others learning about test automation.
 
 
